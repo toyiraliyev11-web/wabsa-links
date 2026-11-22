@@ -165,7 +165,7 @@
   /* ===== Dengiz: kartalar ===== */
   .sea { position: relative; z-index: 2; overflow: hidden; background: linear-gradient(180deg, var(--sea) 0, #0A3D7C 170px, #072C63 430px, #052150 820px, var(--deep) 100%);
     margin-top: -3px; min-height: 60vh; }
-  .wrap { position: relative; z-index: 1; max-width: 460px; margin: 0 auto; padding: 150px 16px calc(150px + env(safe-area-inset-bottom)); }
+  .wrap { position: relative; z-index: 1; max-width: 460px; margin: 0 auto; padding: 8px 16px calc(150px + env(safe-area-inset-bottom)); }
 
   .links { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 10px; }
   .lk { position: relative; overflow: hidden; display: flex; align-items: center; gap: 12px; padding: 14px; border-radius: 18px; background: #fff;
@@ -294,18 +294,6 @@
   @keyframes cau { to { background-position: var(--x) var(--y); } }
   .snow { position: absolute; z-index: 0; inset: 0; width: 100%; height: 100%; pointer-events: none; }
 
-  /* Suzib o'tadigan ko'k kit: 3D render (tools/whale3d.py), 16 kadr — dum eshiladi, suzgichlar qimirlaydi */
-  .whale { position: absolute; z-index: 0; top: 24px; left: 0; width: 300px; aspect-ratio: 760 / 296; pointer-events: none;
-    animation: wswim 34s linear -10s infinite; }
-  @media (min-width: 700px) { .whale { width: 400px; top: 10px; animation-duration: 48s; } }
-  @keyframes wswim { from { transform: translateX(-330px); } to { transform: translateX(calc(100vw + 30px)); } }
-  .whale b { position: absolute; inset: 0; overflow: hidden; animation: wbob 4.8s ease-in-out infinite; }
-  /* 16 kadr 4x4 to'rda: x qator ichida (4 kadr), y qatorlar bo'yicha almashadi */
-  .whale i { position: absolute; inset: 0; background: url("assets/whale.webp") 0 0 / 400% 400% no-repeat;
-    animation: wfx .55s steps(4, jump-none) infinite, wfy 2.2s steps(4, jump-none) infinite; }
-  @keyframes wfx { from { background-position-x: 0%; } to { background-position-x: 100%; } }
-  @keyframes wfy { from { background-position-y: 0%; } to { background-position-y: 100%; } }
-  @keyframes wbob { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(6px) rotate(.8deg); } }
 
   /* Kartalardagi qo'shimchalar */
   .nw { position: absolute; top: 14px; right: 14px; width: 18px; height: 18px; color: #B5C3D6; transition: transform .25s, color .25s; }
@@ -397,7 +385,6 @@
   <div class="rays" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
   <div class="caus" aria-hidden="true"><i></i><i></i></div>
   <canvas class="snow" aria-hidden="true"></canvas>
-  <div class="whale" aria-hidden="true"><b><i></i></b></div>
   <div class="bub" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
   <main class="wrap">
     <h2 class="first" data-ru="Ссылки">Havolalar</h2>
